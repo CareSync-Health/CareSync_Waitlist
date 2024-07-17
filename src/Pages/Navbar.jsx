@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between xs:px-3 lg:px-[60px] py-4'>
+    <div className='flex items-center justify-between xs:px-3 lg:px-[40px] xs:py-4'>
       <img src={logo} className='xs:w-32 lg:w-48' />
       <div className='lg:hidden'>
         <button onClick={toggleMenu} className='text-Primary-0 text-2xl'>

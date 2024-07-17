@@ -26,7 +26,7 @@ const LandingPage = () => {
     <div className='bg-[#19adc709] w-full'>
       <Navbar />
       <div className='flex justify-center items-center'>
-        <div className='w-[97%] lg:-mt-1 rounded-[30px] bg-Accent-0'>
+        <div className='w-[97%] lg:-mt-4 rounded-[30px] bg-Accent-0'>
           <div className='pt-[3rem] lg:px-[5rem] xs:px-[10px] lg:flex items-center '>
             <div className='relative lg:mt-[-5rem]'>
               <h1 className='lg:text-[60px] xs:text-[30px] text-[#19adc7] font-Mulish font-bold lg:w-[130%]'>Your Partner in Health and Wellness</h1>
@@ -46,8 +46,16 @@ const LandingPage = () => {
               {showVideo && (
                 <div className='bg-[#000000c5] w-full fixed z-10 top-0 bottom-0 left-0 animation-gb-popup-slide-zoom-right'>
                   <FaTimes className='float-end text-[30px] font-bold text-white-0 mt-5 me-5 cursor-pointer' onClick={() => setShowVideo(false)} />
-                  <div className='lg:ps-[4rem] xs:px-[1rem] pt-[1rem]'>
-                    <iframe src="https://www.youtube.com/embed/AU9jIjAXCdY?si=Bqh690fY7VEu9R88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='lg:w-[1200px] lg:h-[580px] fixed z-50 top-0 bottom-0'></iframe>
+                  <div className='lg:ps-[4rem] xs:px-[1rem] lg:relative lg:top-[2.5rem] xs:fixed xs:top-[4rem] bottom-0'>
+                    <iframe
+                      src="https://www.youtube.com/embed/AU9jIjAXCdY?si=Bqh690fY7VEu9R88"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      className="lg:w-[1200px] xs:w-[110%] lg:h-[550px] xs:h-[640px]"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               )}
@@ -108,23 +116,23 @@ const LandingPage = () => {
       </center>
 
       <div className='mt-[10rem] lg:px-[80px] xs:px-[15px] pt-[5rem]'>
-          <div className='lg:flex items-start gap-[7rem]'>
-              <img src={about} className='lg:w-[50%]' />
-              <div className='lg:mt-0 xs:mt-[4rem]'>
-                <h2 className='text-[#19adc7] font-bold lg:text-[60px] xs:text-[48px] font-Mulish'>About Us</h2>
-                <h2 className='lg:text-[24px] xs:text-[20px] font-Mulish text-Primary-0 font-bold'>CARESYNC MED</h2>
-                <div className='lg:mt-[5rem] xs:mt-[2rem]'>
-                  <h2 className='lg:w-[75%] text-[25px] text-[#19adc7a9] font-Mulish font-normal flex items-start gap-[1.5rem]'><span className='text-[30px] text-Primary-0 mt-1.5 animate-bounce-sideways'><FaArrowRightLong /></span> CareSync Med stands as your beacon of simplicity</h2>
-                  <p className='text-[18px] text-[#19adc7a9] font-Mulish font-normal mt-[2rem]'>CareSync Med is an innovative platform designed to revolutionize healthcare by connecting patients with top medical professionals worldwide. Our mission is to make quality healthcare accessible, convenient, and efficient for everyone.</p>
-                  <div className='mt-[2rem]'>
-                    <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium flex items-center gap-[1rem]'> 
-                      <span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><IoCalendarNumberSharp /></span> Browse and Book Appointment</h2>
-                    <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium mt-[2rem] flex items-center gap-[1rem]'><span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><IoFileTrayFullSharp /></span> Manage Your Health Records</h2>
-                    <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium mt-[2rem] flex items-center gap-[1rem]'><span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><CiMedicalCross /></span> Access Free Consultations</h2>
-                  </div>
-                </div>
+        <div className='lg:flex items-start gap-[7rem]'>
+          <img src={about} className='lg:w-[50%]' />
+          <div className='lg:mt-0 xs:mt-[4rem]'>
+            <h2 className='text-[#19adc7] font-bold lg:text-[60px] xs:text-[48px] font-Mulish'>About Us</h2>
+            <h2 className='lg:text-[24px] xs:text-[20px] font-Mulish text-Primary-0 font-bold'>CARESYNC MED</h2>
+            <div className='lg:mt-[5rem] xs:mt-[2rem]'>
+              <h2 className='lg:w-[75%] text-[25px] text-[#19adc7a9] font-Mulish font-normal flex items-start gap-[1.5rem]'><span className='text-[30px] text-Primary-0 mt-1.5 animate-bounce-sideways'><FaArrowRightLong /></span> CareSync Med stands as your beacon of simplicity</h2>
+              <p className='text-[18px] text-[#19adc7a9] font-Mulish font-normal mt-[2rem]'>CareSync Med is an innovative platform designed to revolutionize healthcare by connecting patients with top medical professionals worldwide. Our mission is to make quality healthcare accessible, convenient, and efficient for everyone.</p>
+              <div className='mt-[2rem]'>
+                <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium flex items-center gap-[1rem]'>
+                  <span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><IoCalendarNumberSharp /></span> Browse and Book Appointment</h2>
+                <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium mt-[2rem] flex items-center gap-[1rem]'><span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><IoFileTrayFullSharp /></span> Manage Your Health Records</h2>
+                <h2 className='text-[20px] text-Primary-0 font-Mulish font-medium mt-[2rem] flex items-center gap-[1rem]'><span className='bg-Primary-0 border-[2px] text-white-0 text-[25px] rounded-[100px] p-[15px]'><CiMedicalCross /></span> Access Free Consultations</h2>
               </div>
+            </div>
           </div>
+        </div>
       </div>
       <center>
         <div className='mt-[7rem] px-[20px]'>
@@ -138,7 +146,7 @@ const LandingPage = () => {
       </center>
 
       <div className='mt-[30rem]'>
-      ` <Footer />
+        ` <Footer />
       </div>
     </div>
   );
