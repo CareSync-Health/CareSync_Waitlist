@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Landing_page from './Landing_page';
+import WaitList from './Pages/WaitList';
+import LandingPage from './Pages/LandingPage';
 
 const App = () => {
   return (
    <div>
     <Router>
       <Routes>
-        <Route path="/" element={<Landing_page />} />
+        <Route path='/' element={ <LandingPage/> } />
+        <Route path="/waitlist" element={ <WaitList/> } />
       </Routes>
     </Router>
    </div>
