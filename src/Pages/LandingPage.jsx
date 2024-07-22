@@ -55,7 +55,7 @@ const LandingPage = () => {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                       referrerPolicy="strict-origin-when-cross-origin"
-                      className="lg:w-[1200px] xs:w-[110%] lg:h-[550px] xs:h-[640px]"
+                      className="lg:w-[1200px] xs:w-[125%] lg:h-[550px] xs:h-[640px]"
                       allowFullScreen
                     ></iframe>
                   </div>
