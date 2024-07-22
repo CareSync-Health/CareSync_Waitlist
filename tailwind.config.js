@@ -114,6 +114,18 @@ export default {
           animationTimingFunction: 'ease-out',
         },
       },
+      'gb-popup-flip-page': {
+        '0%': {
+          opacity: 0,
+          transformOrigin: '50% 0',
+          transform: 'perspective(800px) rotateY(-180deg) translateZ(300px)',
+        },
+        '100%': {
+          opacity: 1,
+          transformOrigin: '0 0',
+          transform: 'perspective(800px) rotateY(0deg) translateZ(0px)',
+        },
+      },
     },
     animation: {
       'gb-popup-slide-zoom-right': 'gb-popup-slide-zoom-right 1s cubic-bezier(0.215, 0.610, 0.355, 1.000)',
@@ -121,6 +133,7 @@ export default {
       'scale-up': 'scale-up 0.3s forwards',
       'bounce-sideways': 'bounce-sideways 1s infinite',
       'bounce-to-bottom': 'bounce-to-bottom 1.1s both',
+      'gb-popup-flip-page': 'gb-popup-flip-page 1s both',
     },
   },
   plugins: [],

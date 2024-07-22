@@ -24,7 +24,7 @@ export const user_register = (userData) => async (dispatch) => {
 				position: 'top-right',
 			})
 		} else {
-				throw new Error(data.message);
+			throw new Error(data.message);
 		}
 	} catch (error) {
 	  dispatch({

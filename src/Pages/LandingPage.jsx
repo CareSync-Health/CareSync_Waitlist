@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import home from '../assets/home_img.png';
-import { IoCalendarNumberSharp } from "react-icons/io5";
-import { FaHandsHoldingChild, FaPlay } from "react-icons/fa6";
-import { IoFileTrayFullSharp } from "react-icons/io5";
-import { FaTimes } from 'react-icons/fa'
+import { IoCalendarNumberSharp, IoFileTrayFullSharp } from "react-icons/io5";
+import { FaHandsHoldingChild, FaPlay, FaPeopleGroup, FaArrowRightLong, FaUserDoctor } from "react-icons/fa6";
+import { FaTimes, FaHandsHelping, FaRegFolderOpen } from 'react-icons/fa'
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { TbPuzzle2 } from "react-icons/tb";
-import { FaHandsHelping } from "react-icons/fa";
-import { FaPeopleGroup } from "react-icons/fa6";
 import about from '../assets/about.png'
-import { FaArrowRightLong } from "react-icons/fa6";
 import { CiMedicalCross } from "react-icons/ci";
+import { PiCalendarCheckBold } from "react-icons/pi";
+import { MdOutlineHealthAndSafety, MdManageAccounts } from "react-icons/md";
+import { AiOutlineAreaChart } from "react-icons/ai";
+import { RiSecurePaymentLine, RiCalendarScheduleLine } from "react-icons/ri";
 import calltoaction from '../assets/call-to-action.png'
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
@@ -21,6 +21,8 @@ import Footer from './Footer';
 const LandingPage = () => {
 
   const [showVideo, setShowVideo] = useState(false);
+  const [activeTab, setActiveTab] = useState('patient');
+  const [hoveredSection, setHoveredSection] = useState(null);
 
   return (
     <div className='bg-[#19adc709] w-full'>
@@ -134,8 +136,166 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+
+      <div className='flex items-center justify-center'>
+        <div>
+          <div>
+            <h1 className='lg:text-[60px] xs:text-[40px] text-[#19adc7] font-Mulish font-bold text-center mt-[10rem]'>Our Solutions</h1>
+            <div className='flex items-center justify-center gap-[4rem] mt-[3rem]'>
+              <h2 className={`text-[22px] text-Primary-0 font-Mulish font-bold cursor-pointer ${activeTab === 'patient' ? 'border-b-2 border-Primary-0' : ''}`} onClick={() => setActiveTab('patient')}>Patient</h2>
+              <h2 className={`text-[22px] text-Primary-0 font-Mulish font-bold cursor-pointer ${activeTab === 'doctor' ? 'border-b-2 border-Primary-0' : ''}`} onClick={() => setActiveTab('doctor')}>Doctor</h2>
+            </div>
+            {/* Patient Side */}
+            {activeTab === 'patient' && (
+              <div className='flex lg:gap-[6rem] lg:px-[80px] xs:px-[10px] mt-[5rem]'>
+                <div>
+                  <div className='bg-[#19adc73f] p-8 text-[70px] rounded-full w-[28%] ms-[20rem] lg:block xs:hidden'>
+                    <PiCalendarCheckBold className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[30rem] lg:w-auto xs:w-[190%]'>
+                  <div className='bg-[#19adc73f] lg:p-8 xs:p-5 lg:text-[70px] xs:text-[55px] rounded-full mt-[4rem] w-[27%] lg:hidden xs:block'>
+                    <FaUserDoctor className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>02</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Access to Top Doctors</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>CareSync opens the doors to a world of medical expertise. Our platform connects you with highly qualified healthcare professionals from around the globe, giving you access to top-tier medical advice and treatment no matter where you are. Whether you need a specialist consultation or regular check-ups, CareSync ensures you can find and connect with the best doctors in their fields. Experience the peace of mind that comes with knowing you have access to the highest quality care available, right at your fingertips.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-8 text-[70px] rounded-full mt-[4rem] w-[28%] ms-[20rem] lg:block xs:hidden'>
+                    <FaRegFolderOpen className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[36rem] lg:w-auto xs:w-[190%]'>
+                  <div className='bg-[#19adc73f] lg:p-6 xs:p-4 lg:text-[90px] xs:text-[60px] rounded-full mt-[4rem] w-[27%] lg:hidden xs:block'>
+                    <MdOutlineHealthAndSafety className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>04</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Free Consultations</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>Stay informed and proactive about your health with CareSync's free consultations. Our platform provides access to medical advice from qualified professionals without any cost, helping you make informed decisions about your health and wellness. Whether you have a quick question or need guidance on a health concern, our free consultation service ensures you have the support you need. Empower yourself with the knowledge and advice to manage your health effectively, all for free with CareSync.</p>
+                  </div>
+                </div>
+
+                <hr className='w-[2px] h-[1560px] bg-black-0 lg:block xs:hidden' />
+
+                <div>
+                  <div className='lg:ms-0 xs:ms-[-11.5rem]'>
+                  <div className='bg-[#19adc73f] lg:p-8 xs:p-5 lg:text-[70px] xs:text-[60px] rounded-full w-[28%] lg:hidden xs:block'>
+                    <PiCalendarCheckBold className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>01</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Book Appointment</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>CareSync brings unparalleled convenience to your healthcare experience. No more long waits at the clinic or trying to find a doctor with immediate availability. With CareSync, you can book appointments from the comfort of your home, at a time that suits you best. Our intuitive platform allows you to easily find and schedule appointments with top doctors, ensuring you receive the care you need promptly and efficiently. Say goodbye to the hassles of traditional healthcare and embrace a more convenient, streamlined process with CareSync.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-8 text-[70px] rounded-full mt-[4rem] w-[26.5%] lg:block xs:hidden'>
+                    <FaUserDoctor className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[31rem] lg:ms-0 xs:ms-[-11.5rem]'>
+                  <div className='bg-[#19adc73f] lg:p-8 xs:p-4 lg:text-[70px] xs:text-[60px] rounded-full w-[28%] lg:hidden xs:block'>
+                    <FaRegFolderOpen className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[1.5rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>03</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Health Records Management</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>Managing your health records has never been easier or more secure. CareSync offers a centralized platform where you can store and access all your health information in one place. From past medical histories and lab results to ongoing treatment plans, everything is securely stored and easily accessible whenever you need it. This ensures that both you and your healthcare providers have up-to-date information, leading to better, more coordinated care. Take control of your health with CareSync's comprehensive health records management system.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-6 text-[90px] rounded-full mt-[4rem] w-[27%] lg:block xs:hidden'>
+                    <MdOutlineHealthAndSafety className='text-[#ffffffbe]' />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Doctor Side */}
+            {activeTab === 'doctor' && (
+              <div className='flex lg:gap-[6rem] lg:px-[80px] xs:px-[10px] mt-[5rem]'>
+                <div>
+                  <div className='bg-[#19adc73f] p-8 text-[70px] rounded-full w-[28%] ms-[20rem] lg:block xs:hidden'>
+                    <AiOutlineAreaChart className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[30rem] lg:w-auto xs:w-[190%]'>
+                  <div className='bg-[#19adc73f] lg:p-7 xs:p-4 lg:text-[80px] xs:text-[60px] rounded-full w-[27%] lg:hidden xs:block'>
+                    <RiSecurePaymentLine className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>02</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Secure Payments</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>At CareSync, we understand the importance of reliable and secure payment systems for healthcare professionals. Our platform ensures that you receive timely and secure payments for your services, allowing you to focus on providing excellent care without worrying about financial transactions. With our streamlined payment process, you can trust that your earnings are handled with the utmost security and efficiency, providing peace of mind and financial stability.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-8 text-[70px] rounded-full mt-[5rem] w-[28%] ms-[20rem] lg:block xs:hidden'>
+                    <RiCalendarScheduleLine className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[30rem] lg:w-auto xs:w-[190%]'>
+                  <div className='bg-[#19adc73f] lg:p-7 xs:p-4 lg:text-[80px] xs:text-[60px] rounded-full w-[27%] lg:hidden xs:block'>
+                    <MdManageAccounts className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>04</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Patient Management</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>Providing personalized care has never been easier with CareSync's comprehensive patient management system. Access complete and up-to-date health records for each patient, allowing you to deliver tailored treatment plans and informed medical advice. Our platform ensures that all necessary information is at your fingertips, enabling you to offer the highest quality care. By streamlining patient management, CareSync helps you focus more on what you do best—caring for your patients.</p>
+                  </div>
+                </div>
+
+                <hr className='w-[2px] h-[1540px] bg-black-0 lg:block xs:hidden' />
+
+                <div>
+                  <div className='lg:ms-0 xs:ms-[-11rem]'>
+                  <div className='bg-[#19adc73f] lg:p-8 xs:p-4 lg:text-[70px] xs:text-[60px] rounded-full w-[28%] lg:hidden xs:block'>
+                    <AiOutlineAreaChart className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[2rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>01</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Expand Your Reach</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>CareSync provides doctors with the unique opportunity to expand their reach beyond geographical boundaries. By joining our platform, you can offer your services to a global patient base, attracting new patients from different regions and diversifying your practice. This not only helps you grow your professional network but also allows you to make a significant impact on patients' lives worldwide. With CareSync, your expertise can reach those who need it the most, regardless of location.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-7 text-[80px] rounded-full mt-[5rem] w-[27%] lg:block xs:hidden'>
+                    <RiSecurePaymentLine className='text-[#ffffffbe]' />
+                  </div>
+                  <div className='lg:mt-[16rem] xs:mt-[31rem] lg:ms-0 xs:ms-[-11rem]'>
+                  <div className='bg-[#19adc73f] lg:p-8 xs:p-4 lg:text-[70px] xs:text-[60px] rounded-full w-[28%] lg:hidden xs:block'>
+                    <RiCalendarScheduleLine className='text-[#ffffffbe]' />
+                  </div>
+                    <div className='flex gap-[1.5rem]'>
+                      <h1 className='text-[80px] text-[#19adc721] font-Mulish font-bold lg:block xs:hidden'>03</h1>
+                      <div className='lg:mt-[2.3rem] xs:mt-[1.4rem]'>
+                        <h1 className='text-[#19adc7] text-[28px] font-bold font-Mulish'>Flexible Scheduling</h1>
+                      </div>
+                    </div>
+                    <p className='text-[#19adc78c] lg:text-[16px] xs:text-[15px] font-normal font-Mulish mt-1'>CareSync offers an intuitive platform that simplifies the management of your appointments and availability. With flexible scheduling options, you can easily set your availability, manage bookings, and adjust your schedule as needed. This flexibility ensures that you can maintain a healthy work-life balance while providing top-notch care to your patients. Our user-friendly interface makes it effortless to keep your calendar organized and up to date.</p>
+                  </div>
+                  <div className='bg-[#19adc73f] p-7 text-[80px] rounded-full mt-[5rem] w-[27%] lg:block xs:hidden'>
+                    <MdManageAccounts className='text-[#ffffffbe]' />
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       <center>
-        <div className='mt-[7rem] px-[20px]'>
+        <div className='mt-[10rem] px-[20px]'>
           <img src={calltoaction} className='lg:w-[40%]' />
           <div className='bg-[#fff] lg:w-[85%] xs:w-[95%] lg:px-5 xs:px-[15px] py-[50px] rounded-[30px] lg:mt-[-6rem] xs:mt-[-4rem] absolute xs:left-[0.5rem] lg:left-[7rem] shadow-2xl'>
             <h1 className='text-center lg:text-[55px] xs:text-[30px] text-[#19adc7] font-Mulish font-bold lg:w-[60%] lg:leading-[60px]'>Don’t Let Your Health Take a Backseat!</h1>
@@ -146,7 +306,7 @@ const LandingPage = () => {
       </center>
 
       <div className='mt-[30rem]'>
-        ` <Footer />
+        <Footer />
       </div>
     </div>
   );
