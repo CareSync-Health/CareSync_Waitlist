@@ -10,9 +10,20 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: element.offsetTop,
+      });
+      setMenuOpen(false); // Close the menu after scrolling
+    }
+  };
+
   return (
     <div className='flex items-center justify-between xs:px-3 lg:px-[40px] xs:py-4'>
-      <img src={logo} className='xs:w-32 lg:w-48' />
+      <img src={logo} className='xs:w-32 lg:w-48' alt='Logo' />
       <div className='lg:hidden'>
         <button onClick={toggleMenu} className='text-Primary-0 text-2xl'>
           <FaBars />
@@ -24,16 +35,22 @@ const Navbar = () => {
         }`}
       >
         <FaTimes className='text-[30px] text-Primary-0 absolute top-8 right-9 lg:hidden xs:block' onClick={toggleMenu} />
-        <li onClick={toggleMenu} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left'>
-          Home
-        </li>
-        <li onClick={toggleMenu} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left xs:pt-[3rem] lg:pt-0'>
-          About
-        </li>
-        <li onClick={toggleMenu} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left xs:pt-[3rem] lg:pt-0'>
-          Solutions
-        </li>
-        <Link to='/waitlist' onClick={toggleMenu}>
+        <Link to='#Home'>
+          <li onClick={() => handleScrollToSection('Home')} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left'>
+            Home
+          </li>
+        </Link>
+        <Link to='#About'>
+          <li onClick={() => handleScrollToSection('About')} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left xs:pt-[3rem] lg:pt-0'>
+            About
+          </li>
+        </Link>
+        <Link to='#Solution'>
+          <li onClick={() => handleScrollToSection('Solution')} className='text-Primary-0 font-Mulish lg:text-[17px] xs:text-[22px] font-normal lg:text-left xs:pt-[3rem] lg:pt-0'>
+            Solutions
+          </li>
+        </Link>
+        <Link to='/waitlist'>
           <li className='border-Primary-0 border lg:py-1.5 xs:py-2 lg:px-[30px] xs:px-[50px] rounded-[8px] text-Primary-0 hover:bg-Primary-0 hover:text-white-0 xs:mt-[3rem] lg:mt-0 lg:text-[17px] xs:text-[20px]'>
             Join Now
           </li>

@@ -27,7 +27,7 @@ const LandingPage = () => {
   return (
     <div className='bg-[#19adc709] w-full'>
       <Navbar />
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center' id='Home'>
         <div className='w-[97%] lg:-mt-4 rounded-[30px] bg-Accent-0'>
           <div className='pt-[3rem] lg:px-[5rem] xs:px-[10px] lg:flex items-center '>
             <div className='relative lg:mt-[-5rem]'>
@@ -117,7 +117,7 @@ const LandingPage = () => {
         </div>
       </center>
 
-      <div className='mt-[10rem] lg:px-[80px] xs:px-[15px] pt-[5rem]'>
+      <div className='mt-[10rem] lg:px-[80px] xs:px-[15px] pt-[5rem]' id='About'>
         <div className='lg:flex items-start gap-[7rem]'>
           <img src={about} className='lg:w-[50%]' />
           <div className='lg:mt-0 xs:mt-[4rem]'>
@@ -137,7 +137,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center' id='Solution'>
         <div>
           <div>
             <h1 className='lg:text-[60px] xs:text-[40px] text-[#19adc7] font-Mulish font-bold text-center mt-[10rem]'>Our Solutions</h1>
