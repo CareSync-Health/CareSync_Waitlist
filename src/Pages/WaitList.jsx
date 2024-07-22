@@ -38,7 +38,7 @@ const WaitList = () => {
 
   return (
     <div className='w-full lg:h-screen xs:h-[1300px] flex justify-center items-center lg:px-0 xs:px-[10px] animate-gb-popup-flip-page' style={{ backgroundImage: `linear-gradient(rgb(0,0,0,0.6), rgb(0,0,0,0.7)), url(${img2})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-      <div className='bg-[#fff] lg:h-[95%] lg:w-[70%] lg:px-[20px] xs:px-[10px] lg:py-[10px] xs:py-[20px] lg:flex items-center justify-between rounded-[12px]'>
+      <div className='bg-[#fff] lg:h-[95%] lg:w-[70%] lg:px-[20px] xs:px-[10px] lg:py-[10px] xs:py-[20px] lg:flex items-center justify-between lg:gap-[5rem] rounded-[12px]'>
         <div className='lg:w-[45%] lg:-mt-4'>
           <h2 className='lg:text-[29px] xs:text-[27px] font-Mulish font-bold text-[#19adc7] lg:ms-5 mt-1'>We are launching soon!!!</h2>
           <h3 className='text-[14px] lg:ms-6 mt-2 font-Mulish font-medium'>Get Early Access to Experience Personalized and Efficient Healthcare without any constraint</h3>
@@ -97,7 +97,7 @@ const WaitList = () => {
             </div>
           </form>
         </div>
-        <div className='lg:mt-0 mt-[4rem] w-[48%]'>
+        <div className='lg:mt-0 mt-[4rem] w-[49%]'>
           <img src={img} className='lg:h-[85vh] xs:h-[70vh] rounded-[20px] ' />
         </div>
       </div>
