@@ -97,7 +97,7 @@ const WaitList = () => {
             </div>
           </form>
         </div>
-        <div className='lg:mt-0 mt-[4rem]'>
+        <div className='lg:mt-0 mt-[4rem] w-[48%]'>
           <img src={img} className='lg:h-[85vh] xs:h-[70vh] rounded-[20px] ' />
         </div>
       </div>
